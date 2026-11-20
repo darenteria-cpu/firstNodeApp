@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Solar System</title>
-   <link rel="stylesheet" href="css/styles.css">
-</head>
+    <%- include('partials/head.ejs') %>
+    <%- include('partials/head.ejs') %>
+<style>
+    body{ 
+        background-image: url("<%= image %>");
+        background-size: cover;
+    }
+</style>
+
 <body>
     <h1>The Solar System</h1>
-     <nav><a href="/"> Home </a> 
-         <a href="/earth"> Earth </a>
-         <a href="/mars"> Mars </a>
-    </nav>
-    <img id="solar-system-image" src="/img/solar-system.png">
+    <%- include('partials/nav.ejs') %>
+    <img src="/img/solar-system.png" class="solar-system-pic">
+
+    <%- include('partials/footer.ejs') %>
 </body>
 </html>
