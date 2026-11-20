@@ -13,7 +13,16 @@ app.get('/', (req, res) => {
 app.get('/earth', (req, res) => {
  let planetEarth = planets.getEarth();
  console.log(planetEarth);
- res.render('earth');
+// property name can be anything, but must match the name in the ejs file
+// res.render('earth', {"propertyName":planetEarth});
+// shorthand for the above line
+ res.render('earth', {planetEarth});
+});
+
+app.get('/mars', (req, res) => {
+ let planetMars = planets.getMars();
+ console.log(planetMars);
+ res.render('mars', {planetMars});
 });
 
 
