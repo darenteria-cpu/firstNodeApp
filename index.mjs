@@ -22,6 +22,36 @@ app.get('/planet', (req, res) => {
  res.render('planet', { planetInfo, planetName });
 });
 
+
+app.get('/NASA', async (req, res) => {
+   let url = "https://apod.as93.net/apod";   // always today's picture, no key needed
+   let response = await fetch(url);
+   let data = await response.json();
+
+   res.render('NASA', {
+      title: data.title,
+      picOfDay: data.url,
+      description: data.explanation,
+      mediaType: data.media_type
+   });
+});
+
+/*app.get('/NASA', async (req, res) => {
+   // Today's date as YYYY-MM-DD in NASA's time zone
+   let today = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
+   let url = `https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=${today}`;
+   let response = await fetch(url);
+   let data = await response.json();
+   console.log(data)
+
+   res.render('NASA', {
+      title: data.title,
+      picOfDay: data.url,
+      description: data.explanation,
+      mediaType: data.media_type   // some days it's a video instead of an image
+   });
+});
+*/
 app.listen(3000, () => {
    console.log('server started');
 });

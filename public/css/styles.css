@@ -6,9 +6,12 @@ body {
 }
 
 nav {
-        text-align: center;
-        margin: 20px 0;
-        font-size: 22px;
+    display: flex;
+    justify-content: center;   
+    flex-wrap: wrap;           
+    gap: 25px;  
+    font-size: 20px;
+    padding: 20px 0;               
 }
 
 nav a,
@@ -27,6 +30,25 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
+}
+
+.nasa-container {
+    display: flex;
+    flex-direction: column;   /* stack items top to bottom instead of side by side */
+    align-items: center;      /* in a column, this centers items horizontally */
+    gap: 20px;
+    padding: 0 20px;          /* keeps text off the screen edges on small windows */
+}
+
+.nasa-container img {
+    max-width: 100%;          /* the picture never overflows the page */
+    height: auto;
+}
+
+.nasa-container p {
+    max-width: 800px;         /* easier to read than full-screen-width lines */
+    text-align: left;         /* long paragraphs are easier to read left-aligned */
+    line-height: 1.5;
 }
 
 .planet-pic {

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Solar System</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>The Solar System</h1>
+    <%- include('partials/nav.ejs') %>
+    
+    <div class="nasa-container">
+
+        <!-- LEFT column -->
+        <% if (mediaType === "video") { %>
+            <iframe src="<%= picOfDay %>" class="nasa-pic" height="360" title="<%= title %>"></iframe>
+        <% } else { %>
+            <img src="<%= picOfDay %>" alt="<%= title %>" class="nasa-pic">
+        <% } %>
+
+        <!-- RIGHT column: title + description grouped so they stack inside one column -->
+        <div class="nasa-text">
+            <h2><%= title %></h2>
+            <p><%= description %></p>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+
+
+    
+    <%- include('partials/footer.ejs') %>
+
+</body>
+</html>
