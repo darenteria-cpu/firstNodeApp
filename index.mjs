@@ -23,8 +23,8 @@ app.get('/planet', (req, res) => {
 });
 
 
-app.get('/NASA', async (req, res) => {
-   let url = "https://apod.as93.net/apod";   // always today's picture, no key needed
+/*app.get('/NASA', async (req, res) => {
+   let url = "https://apod.as93.net/apod";   // alternate to given url in canvas
    let response = await fetch(url);
    let data = await response.json();
 
@@ -35,8 +35,9 @@ app.get('/NASA', async (req, res) => {
       mediaType: data.media_type
    });
 });
-
-/*app.get('/NASA', async (req, res) => {
+*/
+// -----This url always displays the NASA logo no matter what date I hardcode in, so I commented it out and used the alternate url above.-----
+app.get('/NASA', async (req, res) => {
    // Today's date as YYYY-MM-DD in NASA's time zone
    let today = new Date().toLocaleDateString("en-CA", { timeZone: "America/New_York" });
    let url = `https://api.nasa.gov/planetary/apod?api_key=9mUzIkhlZCZaOoMfspg7jMmwZCZ4LiRHtkgkambD&date=${today}`;
@@ -51,7 +52,7 @@ app.get('/NASA', async (req, res) => {
       mediaType: data.media_type   // some days it's a video instead of an image
    });
 });
-*/
+
 app.listen(3000, () => {
    console.log('server started');
 });

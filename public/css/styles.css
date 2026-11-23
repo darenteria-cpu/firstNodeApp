@@ -32,23 +32,46 @@ nav a:hover {
     font-size: 18px;
 }
 
-.nasa-container {
+.planet-container {
     display: flex;
-    flex-direction: column;   /* stack items top to bottom instead of side by side */
-    align-items: center;      /* in a column, this centers items horizontally */
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
-    padding: 0 20px;          /* keeps text off the screen edges on small windows */
+    padding: 0 20px;
 }
 
+.planet-text {
+    max-width: 800px;
+    width: 100%;
+}
+
+.planet-text p {
+    text-align: left;
+    line-height: 1.5;
+}
+
+.nasa-container {
+    display: flex;
+    flex-direction: column;   
+    align-items: center;     
+    gap: 20px;
+    padding: 0 20px;   
+}       
+
 .nasa-container img {
-    max-width: 100%;          /* the picture never overflows the page */
+    max-width: 100%;          
     height: auto;
 }
 
-.nasa-container p {
-    max-width: 800px;         /* easier to read than full-screen-width lines */
-    text-align: left;         /* long paragraphs are easier to read left-aligned */
+.nasa-container p {         
+    text-align: left;         
     line-height: 1.5;
+}
+
+.nasa-text {
+    max-width: 800px;
+    width: 100%;
+
 }
 
 .planet-pic {
